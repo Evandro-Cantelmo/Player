@@ -3,15 +3,16 @@ import './App.css';
 
 function App() {
   const [video, setVideo] = useState([]);
-  const [text, setText] = useState("teto");
+  const [text, setText] = useState("");
 
   const getVideo = async () => {
     let res = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBnunSfLqtKpMemlW22YdiqRnqtTdlMoxs&type=video&q=${text}&maxResults=20`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&type=video&q=${text}&maxResults=20`
     );
-    
+
     let resJson = await res.json();
     setVideo(resJson.items);
+    console.log(process.env.REACT_APP_YOUTUBE_API_KEY)
     console.log(resJson)
   };
 
@@ -19,10 +20,12 @@ function App() {
     getVideo();
   }, []);
 
-  
+
   return (
-    <div>
-      Hello world
+    <div className="container">
+      <div className="box-options">
+      </div>
+      <div></div>
     </div>
   );
 }

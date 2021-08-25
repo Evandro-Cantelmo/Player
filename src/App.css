@@ -1,0 +1,19 @@
+body {
+  color: rgb(144, 74, 255);
+}
+.container {
+  background: rgb(34, 34, 34);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-options {
+  width: 60vw;
+  height: 70vh;
+  border-radius: 20px;
+  background: rgb(144, 74, 255);
+  box-shadow: rgb(136, 62, 255) 0px 0px 10px 1px;
+  display: flex;
+}
