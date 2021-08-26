@@ -23,9 +23,11 @@ function App() {
 
   return (
     <div className="container">
+      <div className="box-music">
+
+      </div>
       <div className="box-options">
       </div>
-      <div></div>
     </div>
   );
 }

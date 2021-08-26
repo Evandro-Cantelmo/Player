@@ -7,7 +7,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .box-options {
   width: 60vw;
@@ -16,4 +16,11 @@ body {
   background: rgb(144, 74, 255);
   box-shadow: rgb(136, 62, 255) 0px 0px 10px 1px;
   display: flex;
+}
+.box-music {
+  width: 23vw;
+  height: 70vh;
+  border-radius: 20px;
+  background: rgb(39, 255, 39);
+  box-shadow: rgb(33, 243, 39) 0px 0px 10px 1px;
 }
