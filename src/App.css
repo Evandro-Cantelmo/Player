@@ -1,5 +1,5 @@
 body {
-  color: rgb(144, 74, 255);
+  color: rgb(255, 255, 255);
 }
 .container {
   background: rgb(34, 34, 34);
@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 1s linear;
 }
 .box-options input{
   margin-top: 5px;
@@ -58,9 +59,25 @@ body {
 }
 .mini-box-music{
   width: 20vw;
-  height: 5vh;
+  padding: 5px 0;
   border-radius: 20px;
   background: rgb(144, 74, 255);
   box-shadow: rgb(136, 62, 255) 0px 0px 5px 0.5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.mini-box-options{
+  width: 50vw;
+  height: 10vh;
+  margin-top: 7px;
+  border-radius: 20px;
+  background: rgb(39, 255, 39);
+  box-shadow: rgb(33, 243, 39) 0 0 5px 0.5px;
+}
+.video{
+  border-radius: 20px;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import MiniBoxMusic from './componentes/miniBoxMusic';
+import MiniBoxOptions from './componentes/miniBoxOptions';
 
 function App() {
   const [video, setVideo] = useState([]);
@@ -25,11 +26,16 @@ function App() {
   return (
     <div className="container">
       <div className="box-music">
-        <MiniBoxMusic>b</MiniBoxMusic>
+        <MiniBoxMusic>
+          <iframe className="video" width="260" height="180" src="https://www.youtube.com/embed/cMTrUCasbss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </MiniBoxMusic>
+        <MiniBoxMusic description="asdasdaasdaasdasdsdasdasdsdasdmfejksckdjasdmsfnse">
+        </MiniBoxMusic>
       </div>
       <div className="box-options">
         <input></input>
         <button type="button">Search</button>
+        <MiniBoxOptions></MiniBoxOptions>
       </div>
     </div>
   );
