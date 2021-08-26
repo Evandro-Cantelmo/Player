@@ -6,6 +6,8 @@ import MiniBoxOptions from './componentes/miniBoxOptions';
 function App() {
   const [video, setVideo] = useState([]);
   const [text, setText] = useState("");
+  const [id, setId] = useState("");
+  const [effect, setEffect] = useState([]);
 
   const getVideo = async () => {
     let res = await fetch(
@@ -18,6 +20,14 @@ function App() {
     console.log(resJson)
   };
 
+  const effectLayout = () => {
+    setEffect({
+      visibility: "visible",
+      opacity: "1",
+      transform: "none"
+    })
+  }
+
   useEffect(() => {
     getVideo();
   }, []);
@@ -25,16 +35,16 @@ function App() {
 
   return (
     <div className="container">
-      <div className="box-music">
-        <MiniBoxMusic>
-          <iframe className="video" width="260" height="180" src="https://www.youtube.com/embed/cMTrUCasbss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div className="box-music" style={effect}>
+        <MiniBoxMusic style={effect}>
+          <iframe className="video" width="260" height="180" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </MiniBoxMusic>
-        <MiniBoxMusic description="asdasdaasdaasdasdsdasdasdsdasdmfejksckdjasdmsfnse">
+        <MiniBoxMusic style={effect} description="asdasdaasdaasdasdsdasdasdsdasdmfejksckdjasdmsfnse">
         </MiniBoxMusic>
       </div>
-      <div className="box-options">
+      <div className="box-options" style={effect}>
         <input></input>
-        <button type="button">Search</button>
+        <button type="button" onClick={effectLayout}>Search</button>
         <MiniBoxOptions></MiniBoxOptions>
       </div>
     </div>

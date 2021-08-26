@@ -18,7 +18,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 1s linear;
+  transform:  translateX(-25%);
+  transition: all 0.3s ease;
 }
 .box-options input{
   margin-top: 5px;
@@ -27,7 +28,7 @@ body {
   border-radius: 20px;
   border: 0;
   outline: none;
-  transition: box-shadow 0.5s linear;
+  transition: box-shadow 0.5s ease;
   text-align: center;
 }
 .box-options input:focus{
@@ -39,7 +40,7 @@ body {
   height: 20px;
   border-radius: 20px;
   border: none;
-  transition: all 0.5s linear;
+  transition: all 0.5s ease;
 }
 .box-options button:hover{
   background: rgb(39, 255, 39);
@@ -52,10 +53,13 @@ body {
   border-radius: 20px;
   background: rgb(39, 255, 39);
   box-shadow: rgb(33, 243, 39) 0px 0px 10px 1px;
-  display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 .mini-box-music{
   width: 20vw;
@@ -63,11 +67,14 @@ body {
   border-radius: 20px;
   background: rgb(144, 74, 255);
   box-shadow: rgb(136, 62, 255) 0px 0px 5px 0.5px;
-  display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   overflow-wrap: break-word;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
 }
 
 .mini-box-options{
