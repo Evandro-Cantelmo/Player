@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import MiniBoxMusic from './componentes/miniBoxMusic';
 
 function App() {
   const [video, setVideo] = useState([]);
@@ -24,9 +25,11 @@ function App() {
   return (
     <div className="container">
       <div className="box-music">
-
+        <MiniBoxMusic>b</MiniBoxMusic>
       </div>
       <div className="box-options">
+        <input></input>
+        <button type="button">Search</button>
       </div>
     </div>
   );

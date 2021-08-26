@@ -16,6 +16,34 @@ body {
   background: rgb(144, 74, 255);
   box-shadow: rgb(136, 62, 255) 0px 0px 10px 1px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-options input{
+  margin-top: 5px;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 20px;
+  border: 0;
+  outline: none;
+  transition: box-shadow 0.5s linear;
+  text-align: center;
+}
+.box-options input:focus{
+  box-shadow: rgb(39, 255, 39) 0px 2px 10px 1px;
+}
+.box-options button{
+  margin-top: 5px;
+  width: 60px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.5s linear;
+}
+.box-options button:hover{
+  background: rgb(39, 255, 39);
+  box-shadow: rgb(33, 243, 39) 0 2px 10px 1px;
+  color: white;
 }
 .box-music {
   width: 23vw;
@@ -23,4 +51,16 @@ body {
   border-radius: 20px;
   background: rgb(39, 255, 39);
   box-shadow: rgb(33, 243, 39) 0px 0px 10px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.mini-box-music{
+  width: 20vw;
+  height: 5vh;
+  border-radius: 20px;
+  background: rgb(144, 74, 255);
+  box-shadow: rgb(136, 62, 255) 0px 0px 5px 0.5px;
+  display: flex;
 }
