@@ -7,6 +7,7 @@ function App() {
   const [video, setVideo] = useState([]);
   const [text, setText] = useState("");
   const [id, setId] = useState('');
+  const [desc, setDesc] = useState('')
   const [effect, setEffect] = useState([]);
 
   const getVideo = async () => {
@@ -18,7 +19,6 @@ function App() {
     setVideo(resJson.items);
   };
 
-  console.log(id)
   const effectLayout = () => {
     setEffect({
       visibility: "visible",
@@ -26,7 +26,6 @@ function App() {
       transform: "none"
     })
   }
-
 
   useEffect(() => {
     getVideo();
@@ -37,13 +36,13 @@ function App() {
     <div className="container">
 
 
-        <div className="box-music" style={effect}>
-          <MiniBoxMusic style={effect}>
-            <iframe className="video" width="260" height="180" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </MiniBoxMusic>
-          <MiniBoxMusic style={effect} description="asdasdaasdaasdasdsdasdasdsdasdmfejksckdjasdmsfnse">
-          </MiniBoxMusic>
-        </div>
+      <div className="box-music" style={effect}>
+        <MiniBoxMusic style={effect}>
+          <iframe className="video" width="260" height="180" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </MiniBoxMusic>
+        <MiniBoxMusic style={effect} description={video[desc]?.snippet.description}>
+        </MiniBoxMusic>
+      </div>
 
       <div className="box-options" style={effect}>
         <input></input>
@@ -55,11 +54,11 @@ function App() {
               <MiniBoxOptions
                 style={effect}
                 key={index}
-                onClick={() => setId(vids.id?.videoId)}
-                
+                onClick={() => setId(vids.id?.videoId), () => setDesc(index)}
+
               >
                 <li className="mini-box-options-list">
-                  {index + 1} {vids.snippet.title.substring(0, 25)}{vids.id.videoId}
+                  {index + 1} {vids.snippet.title.substring(0, 25)}
                 </li>
               </MiniBoxOptions>
             ))}
