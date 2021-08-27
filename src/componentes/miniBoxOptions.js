@@ -4,7 +4,7 @@ import React from 'react';
 
 function MiniBoxOptions(props) {
   return (
-      <div className="mini-box-options" style={props.style}>
+      <div className="mini-box-options" style={props.style} onClick={props.onClick}>
           {props.children}
           
       </div>
