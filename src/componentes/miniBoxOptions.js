@@ -2,9 +2,10 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-function MiniBoxOptions() {
+function MiniBoxOptions(props) {
   return (
-      <div className="mini-box-options">
+      <div className="mini-box-options" style={props.style}>
+          {props.children}
           
       </div>
   )

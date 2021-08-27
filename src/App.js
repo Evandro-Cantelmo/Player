@@ -17,7 +17,7 @@ function App() {
     let resJson = await res.json();
     setVideo(resJson.items);
     console.log(process.env.REACT_APP_YOUTUBE_API_KEY)
-    console.log(resJson)
+    console.log(video)
   };
 
   const effectLayout = () => {
@@ -27,7 +27,6 @@ function App() {
       transform: "none"
     })
   }
-
   useEffect(() => {
     getVideo();
   }, []);
@@ -35,6 +34,7 @@ function App() {
 
   return (
     <div className="container">
+
       <div className="box-music" style={effect}>
         <MiniBoxMusic style={effect}>
           <iframe className="video" width="260" height="180" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -45,8 +45,23 @@ function App() {
       <div className="box-options" style={effect}>
         <input></input>
         <button type="button" onClick={effectLayout}>Search</button>
-        <MiniBoxOptions></MiniBoxOptions>
+
+        <div>
+          <ul>
+              {video.map((vids, index) => (
+                <MiniBoxOptions
+                  style={effect}
+                  key={index}
+                >
+                  <li className="mini-box-options-list">
+                    {index + 1} {vids.snippet.title.substring(0,25)}
+                  </li>
+                </MiniBoxOptions>
+              ))}
+          </ul>
+        </div>
       </div>
+
     </div>
   );
 }

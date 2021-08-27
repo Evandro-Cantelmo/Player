@@ -1,5 +1,15 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgb(39, 255, 39);
+  border-radius: 20px;
+}
 body {
   color: rgb(255, 255, 255);
+  font-family: 'Rajdhani', sans-serif;
 }
 .container {
   background: rgb(34, 34, 34);
@@ -20,11 +30,12 @@ body {
   align-items: center;
   transform:  translateX(-25%);
   transition: all 0.3s ease;
+  overflow-y: scroll;
 }
 .box-options input{
   margin-top: 5px;
   width: 20vw;
-  height: 5vh;
+  min-height: 20px;
   border-radius: 20px;
   border: 0;
   outline: none;
@@ -37,7 +48,7 @@ body {
 .box-options button{
   margin-top: 5px;
   width: 60px;
-  height: 20px;
+  min-height: 20px;
   border-radius: 20px;
   border: none;
   transition: all 0.5s ease;
@@ -79,12 +90,36 @@ body {
 
 .mini-box-options{
   width: 50vw;
-  height: 10vh;
-  margin-top: 7px;
+  height: 50px;
+  margin: 10px 0;
   border-radius: 20px;
   background: rgb(39, 255, 39);
   box-shadow: rgb(33, 243, 39) 0 0 5px 0.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.mini-box-options:hover{
+  border-radius: 15px;
+}
+.mini-box-options-list{
+  list-style: none;
+  margin: 0 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 1s ease;
+  border-bottom: transparent solid 1px;
+}
+
+.mini-box-options-list:hover{
+  border-bottom: rgb(136, 62, 255) solid 1px;
+  transform: translateX(20px);
+
 }
 .video{
   border-radius: 20px;
+  background-color: aqua;
 }
