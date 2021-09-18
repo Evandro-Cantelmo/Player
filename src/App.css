@@ -17,7 +17,7 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 .container {
-  background-image: url(/src/wallpaper.jpg);
+  background-image: url(/src/assets/wallpaper.jpg);
   background-size: cover;
 
   width: 100vw;
