@@ -126,3 +126,54 @@ body {
 .video {
   border-radius: 20px;
 }
+
+@media screen and (max-width:769px){
+  .container{
+    flex-direction: column;
+  }
+  .box-options{
+    width: 100vw;
+    border-radius: 0;
+    transform: translateY(-25vh);
+  }
+
+  .box-music{
+    width: 100vw;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.788);
+    flex-direction: row;
+  }
+  .mini-box-music{
+    width: 45vw;
+    height: 40vh;
+  }
+  iframe{
+    width: 43vw;
+    height: 38vh;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .box-music{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mini-box-music{
+    width: 90vw;
+    height: 40vh;
+  }
+  iframe{
+    width: 85vw;
+  }
+  .mini-box-second{
+    display: none;
+  }
+  .mini-box-options{
+    padding: 0 15px;
+  }
+  input{
+    padding: 4px 30px;
+  }
+
+}

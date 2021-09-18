@@ -50,20 +50,24 @@ function App() {
   return (
     <div className="container">
       <div className="box-music" style={effect}>
-        <MiniBoxMusic style={effect}>
-          <iframe
-            className="video"
-            src={`https://www.youtube.com/embed/${id}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </MiniBoxMusic>
-        <MiniBoxMusic
-          style={effect}
-          description={video[desc]?.snippet.description}
-        ></MiniBoxMusic>
+        <span>
+          <MiniBoxMusic style={effect}>
+            <iframe
+              className="video"
+              src={`https://www.youtube.com/embed/${id}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </MiniBoxMusic>
+        </span>
+        <span className='mini-box-second'>
+          <MiniBoxMusic
+            style={effect}
+            description={video[desc]?.snippet.description}
+          ></MiniBoxMusic>
+        </span>
       </div>
 
       <div className="box-options" style={effect}>
