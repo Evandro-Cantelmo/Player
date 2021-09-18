@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import MiniBoxMusic from './componentes/miniBoxMusic';
-import MiniBoxOptions from './componentes/miniBoxOptions';
+import { useState, useEffect } from "react";
+import "./App.css";
+import MiniBoxMusic from "./componentes/miniBoxMusic";
+import MiniBoxOptions from "./componentes/miniBoxOptions";
 
 function App() {
   const [video, setVideo] = useState([]);
   const [text, setText] = useState("");
-  const [id, setId] = useState('');
-  const [desc, setDesc] = useState('')
+  const [id, setId] = useState("");
+  const [desc, setDesc] = useState("");
   const [effect, setEffect] = useState([]);
 
   const getVideo = async () => {
@@ -23,30 +23,58 @@ function App() {
     setEffect({
       visibility: "visible",
       opacity: "1",
-      transform: "none"
-    })
-  }
+      transform: "none",
+      overflow: "auto",
+    });
+  };
+
+  const handleText = ({ target }) => {
+    setText(target.value);
+  };
+
+  const inputEffect = () => {
+    getVideo();
+    effectLayout();
+  };
+
+  const enterPress = (event) => {
+    if (event.key === "Enter") {
+      inputEffect();
+    }
+  };
 
   useEffect(() => {
     getVideo();
   }, []);
 
-
   return (
     <div className="container">
-
-
       <div className="box-music" style={effect}>
         <MiniBoxMusic style={effect}>
-          <iframe className="video" width="260" height="180" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe
+            className="video"
+            src={`https://www.youtube.com/embed/${id}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </MiniBoxMusic>
-        <MiniBoxMusic style={effect} description={video[desc]?.snippet.description}>
-        </MiniBoxMusic>
+        <MiniBoxMusic
+          style={effect}
+          description={video[desc]?.snippet.description}
+        ></MiniBoxMusic>
       </div>
 
       <div className="box-options" style={effect}>
-        <input></input>
-        <button type="button" onClick={effectLayout}>Search</button>
+        <input
+          placeholder="Oque deseja escutar?"
+          onKeyPress={enterPress}
+          onChange={handleText}
+        ></input>
+        <button type="submit" onClick={inputEffect}>
+          Search
+        </button>
 
         <div>
           <ul>
@@ -54,8 +82,7 @@ function App() {
               <MiniBoxOptions
                 style={effect}
                 key={index}
-                onClick={() => setId(vids.id?.videoId), () => setDesc(index)}
-
+                onClick={() => setId(vids.id?.videoId) || setDesc(index)}
               >
                 <li className="mini-box-options-list">
                   {index + 1} {vids.snippet.title.substring(0, 25)}
@@ -65,7 +92,6 @@ function App() {
           </ul>
         </div>
       </div>
-
     </div>
   );
 }

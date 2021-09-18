@@ -4,15 +4,22 @@
 
 ::-webkit-scrollbar-thumb:vertical,
 ::-webkit-scrollbar-thumb:horizontal {
-  background-color: rgb(39, 255, 39);
+  background-color: rgb(0, 179, 74);
   border-radius: 20px;
 }
+iframe{
+  width:18vw;
+  height:180px;
+}
+
 body {
-  color: rgb(255, 255, 255);
-  font-family: 'Rajdhani', sans-serif;
+  color: rgb(0, 0, 0);
+  font-family: "Rajdhani", sans-serif;
 }
 .container {
-  background: rgb(34, 34, 34);
+  background-image: url(/src/wallpaper.jpg);
+  background-size: cover;
+
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -23,16 +30,15 @@ body {
   width: 60vw;
   height: 70vh;
   border-radius: 20px;
-  background: rgb(144, 74, 255);
-  box-shadow: rgb(136, 62, 255) 0px 0px 10px 1px;
+  background: rgba(0, 0, 0, 0.575);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform:  translateX(-25%);
+  transform: translateX(-25%);
   transition: all 0.3s ease;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
-.box-options input{
+.box-options input {
   margin-top: 5px;
   width: 20vw;
   min-height: 20px;
@@ -42,10 +48,8 @@ body {
   transition: box-shadow 0.5s ease;
   text-align: center;
 }
-.box-options input:focus{
-  box-shadow: rgb(39, 255, 39) 0px 2px 10px 1px;
-}
-.box-options button{
+
+.box-options button {
   margin-top: 5px;
   width: 60px;
   min-height: 20px;
@@ -53,31 +57,31 @@ body {
   border: none;
   transition: all 0.5s ease;
 }
-.box-options button:hover{
-  background: rgb(39, 255, 39);
-  box-shadow: rgb(33, 243, 39) 0 2px 10px 1px;
+.box-options button:hover {
+  background: rgb(0, 179, 74);
   color: white;
 }
 .box-music {
   width: 23vw;
   height: 70vh;
   border-radius: 20px;
-  background: rgb(39, 255, 39);
-  box-shadow: rgb(33, 243, 39) 0px 0px 10px 1px;
+  background: rgba(0, 0, 0, 0.575);
+
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
   visibility: hidden;
+  overflow: none;
   opacity: 0;
   transition: all 0.8s ease;
 }
-.mini-box-music{
+.mini-box-music {
   width: 20vw;
   padding: 5px 0;
   border-radius: 20px;
-  background: rgb(144, 74, 255);
-  box-shadow: rgb(136, 62, 255) 0px 0px 5px 0.5px;
+  background: rgb(0, 179, 74);
+
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -89,13 +93,13 @@ body {
   transition: all 1s ease;
 }
 
-.mini-box-options{
+.mini-box-options {
   width: 50vw;
   height: 50px;
   margin: 10px 0;
   border-radius: 20px;
-  background: rgb(39, 255, 39);
-  box-shadow: rgb(33, 243, 39) 0 0 5px 0.5px;
+  background: rgb(0, 179, 74);
+
   visibility: hidden;
   opacity: 0;
   transition: all 1s ease;
@@ -103,10 +107,10 @@ body {
   align-items: center;
   justify-content: start;
 }
-.mini-box-options:hover{
+.mini-box-options:hover {
   border-radius: 15px;
 }
-.mini-box-options-list{
+.mini-box-options-list {
   list-style: none;
   margin: 0 15px;
   color: rgb(0, 0, 0);
@@ -115,11 +119,10 @@ body {
   border-bottom: transparent solid 1px;
 }
 
-.mini-box-options-list:hover{
-  border-bottom: rgb(136, 62, 255) solid 1px;
+.mini-box-options-list:hover {
+  border-bottom: rgb(0, 112, 60) solid 1px;
   transform: translateX(20px);
-
 }
-.video{
+.video {
   border-radius: 20px;
 }
